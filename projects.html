@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Appsssss</title>
+  <link rel="stylesheet" href="../assets/css/projects.css ">
+ 
+</head>
+<body>
+     <div class="page-wrapper">
+          <div class="side-filler"></div>
+          <div class="main-content">
+    <header>
+              
+              <div class="topbar">
+                <div class="leftbar">
+                <h1>Japhet Sasing</h1>
+                <p>Web Developer | Designer</p>
+                </div>
+                <div class="rightbar">
+                  <img height="150px"; width="150px" src="../assets/img/b8739cfc-6855-4bb3-8210-86448fbea6bc.jpg" alt="pic">
+                </div>
+            </div>
+              <nav>
+              <ul>
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../html/biodata.html">Biodata</a></li>
+                  <li><a class="active" href="#Prjocets">Projects</a></li>
+              </ul>
+              </nav>
+            </header>
+  <div class="quiz-container">
+    <h2>Simple Quizbnm
+
+    </h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What is the capital of France?</p>
+        <label><input type="radio" name="q1" value="a"> Berlin</label>
+        <label><input type="radio" name="q1" value="b"> Madrid</label>
+        <label><input type="radio" name="q1" value="c"> Paris</label>
+        <label><input type="radio" name="q1" value="d"> Rome</label>
+      </div>
+      <div class="question">
+        <p>2. Which planet is known as the Red Planet?</p>
+        <label><input type="radio" name="q2" value="a"> Earth</label>
+        <label><input type="radio" name="q2" value="b"> Mars</label>
+        <label><input type="radio" name="q2" value="c"> Jupiter</label>
+        <label><input type="radio" name="q2" value="d"> Venus</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      const answers = {
+        q1: 'c',
+        q2: 'b'
+      };
+
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById('result').textContent = `Your score: ${score}/2`;
+    });
+  </script>
+     </div>
+          <div class="side-filler"></div>
+        </div>
+</body>
+</html>
